@@ -7,6 +7,8 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>My To-Do List</Text>
+
       {/*TO-DO LISTING*/}
       <View style={styles.listCard}>
         {tasks.map((task) => (
@@ -28,6 +30,13 @@ const styles = StyleSheet.create({
     paddingTop: 24,
     paddingBottom: 28,
   },
+    title: {
+    fontSize: 34,
+    fontWeight: '800',
+    color: '#162447',
+    marginBottom: 20,
+    letterSpacing: 0.4,
+  },
   listCard: {
     flex: 1,
     backgroundColor: '#ffffff',
@@ -35,7 +44,7 @@ const styles = StyleSheet.create({
     paddingVertical: 18,
     paddingHorizontal: 16,
     shadowColor: '#0b1324',
-    shadowOpacity: 0.08,
+    shadowOpacity: 0.10,
     shadowRadius: 12,
     shadowOffset: { width: 0, height: 4 },
     elevation: 3,
