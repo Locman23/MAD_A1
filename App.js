@@ -7,8 +7,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>My To-Do List</Text>
-
+      {/*TO-DO LISTING*/}
       <View style={styles.listCard}>
         {tasks.map((task) => (
           <View key={task} style={styles.taskBubble}>
@@ -16,11 +15,6 @@ export default function App() {
           </View>
         ))}
       </View>
-
-      <View style={styles.addBar}>
-        <Button title="Add to do item" onPress={() => {}} color="#3a86ff" />
-      </View>
-
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -33,13 +27,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 24,
     paddingBottom: 28,
-  },
-  title: {
-    fontSize: 34,
-    fontWeight: '800',
-    color: '#162447',
-    marginBottom: 20,
-    letterSpacing: 0.4,
   },
   listCard: {
     flex: 1,
@@ -65,10 +52,5 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#1f2a44',
     fontWeight: '600',
-  },
-  addBar: {
-    marginTop: 18,
-    minHeight: 56,
-    justifyContent: 'center',
   },
 });
