@@ -17,6 +17,11 @@ export default function App() {
           </View>
         ))}
       </View>
+
+      <View style={styles.addBar}>
+        <Button title="Add to do item" onPress={() => {}} color="#3a86ff" />
+      </View>
+
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -61,5 +66,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#1f2a44',
     fontWeight: '600',
+  },
+  addBar: {
+    marginTop: 18,
+    minHeight: 56,
+    justifyContent: 'center',
   },
 });
