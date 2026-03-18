@@ -1,45 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Button, StyleSheet, Text, View } from 'react-native';
-import TaskList from './components/TaskList';
+import { useState } from 'react';
+import HomeScreen from './screens/HomeScreen';
+
 
 export default function App() {
-  const tasks = ['Buy groceries', 'Finish math homework', 'Walk the dog', 'Call Sam'];
+  const [currentScreen, setCurrentScreen] = useState('Home');
 
-  return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>My To-Do List</Text>
+  const navigate = (screenName) => setCurrentScreen(screenName);
 
-      {/*TO-DO LISTING*/}
-      <TaskList tasks={tasks} />
-
-      <View style={styles.addBar}>
-        <Button title="Add to do item" onPress={() => {}} color="#3a86ff" />
-      </View>
-
-      <StatusBar style="auto" />
-    </SafeAreaView>
-  );
+  switch (currentScreen) {
+    case 'Home':
+      return <HomeScreen navigate={navigate} />;
+    default:
+      return <HomeScreen navigate={navigate} />;
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f4f7fb',
-    paddingHorizontal: 20,
-    paddingTop: 24,
-    paddingBottom: 28,
-  },
-  title: {
-    fontSize: 34,
-    fontWeight: '800',
-    color: '#162447',
-    marginBottom: 20,
-    letterSpacing: 0.4,
-  },
-  addBar: {
-    marginTop: 18,
-    minHeight: 56,
-    justifyContent: 'center',
-  },
-});
