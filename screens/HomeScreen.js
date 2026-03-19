@@ -5,7 +5,7 @@ import TaskList from '../components/TaskList';
 import colors from '../theme/colors';
 
 export default function HomeScreen({ navigate }) {
-  const tasks = ['Buy groceries', 'Finish math homework', 'Walk the dog', 'Call Sam'];
+  const tasks = ['Buy groceries', 'Finish MAD homework', 'Go to the Gym', 'Study for everything'];
 
   return (
     <SafeAreaView style={styles.container}>
