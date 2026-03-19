@@ -1,5 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import TaskBubble from './TaskBubble';
+import colors from '../theme/colors';
 
 export default function TaskList({ tasks }) {
   return (
@@ -14,11 +15,11 @@ export default function TaskList({ tasks }) {
 const styles = StyleSheet.create({
   listCard: {
     flex: 1,
-    backgroundColor: '#252b3b',
+    backgroundColor: colors.surface,
     borderRadius: 18,
     paddingVertical: 18,
     paddingHorizontal: 16,
-    shadowColor: '#000000',
+    shadowColor: colors.shadow,
     shadowOpacity: 0.30,
     shadowRadius: 12,
     shadowOffset: { width: 0, height: 4 },

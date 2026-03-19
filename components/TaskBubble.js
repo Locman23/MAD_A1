@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
+import colors from '../theme/colors';
 
 export default function TaskBubble({ task }) {
   return (
@@ -10,7 +11,7 @@ export default function TaskBubble({ task }) {
 
 const styles = StyleSheet.create({
   taskBubble: {
-    backgroundColor: '#2e3650',
+    backgroundColor: colors.bubble,
     borderRadius: 999,
     paddingVertical: 12,
     paddingHorizontal: 16,
@@ -18,7 +19,7 @@ const styles = StyleSheet.create({
   },
   taskText: {
     fontSize: 18,
-    color: '#c5cae9',
+    color: colors.textSecondary,
     fontWeight: '600',
   },
 });

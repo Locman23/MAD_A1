@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import TaskList from '../components/TaskList';
+import colors from '../theme/colors';
 
 export default function HomeScreen({ navigate }) {
   const tasks = ['Buy groceries', 'Finish math homework', 'Walk the dog', 'Call Sam'];
@@ -14,7 +15,7 @@ export default function HomeScreen({ navigate }) {
       <TaskList tasks={tasks} />
 
       <View style={styles.addBar}>
-        <Button title="Add to do item" onPress={() => {}} color="#5c7cfa" />
+        <Button title="Add to do item" onPress={() => {}} color={colors.buttonPrimary} />
       </View>
 
       <StatusBar style="light" />
@@ -25,7 +26,7 @@ export default function HomeScreen({ navigate }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1a1f2e',
+    backgroundColor: colors.background,
     paddingHorizontal: 20,
     paddingTop: 24,
     paddingBottom: 28,
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 34,
     fontWeight: '800',
-    color: '#e2e8f8',
+    color: colors.textPrimary,
     marginBottom: 20,
     letterSpacing: 0.4,
   },
