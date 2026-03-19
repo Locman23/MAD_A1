@@ -14,10 +14,10 @@ export default function HomeScreen({ navigate }) {
       <TaskList tasks={tasks} />
 
       <View style={styles.addBar}>
-        <Button title="Add to do item" onPress={() => {}} color="#3a86ff" />
+        <Button title="Add to do item" onPress={() => {}} color="#5c7cfa" />
       </View>
 
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
     </SafeAreaView>
   );
 }
@@ -25,7 +25,7 @@ export default function HomeScreen({ navigate }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f4f7fb',
+    backgroundColor: '#1a1f2e',
     paddingHorizontal: 20,
     paddingTop: 24,
     paddingBottom: 28,
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 34,
     fontWeight: '800',
-    color: '#162447',
+    color: '#e2e8f8',
     marginBottom: 20,
     letterSpacing: 0.4,
   },

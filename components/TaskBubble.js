@@ -10,7 +10,7 @@ export default function TaskBubble({ task }) {
 
 const styles = StyleSheet.create({
   taskBubble: {
-    backgroundColor: '#e9f1ff',
+    backgroundColor: '#2e3650',
     borderRadius: 999,
     paddingVertical: 12,
     paddingHorizontal: 16,
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
   taskText: {
     fontSize: 18,
-    color: '#1f2a44',
+    color: '#c5cae9',
     fontWeight: '600',
   },
 });
