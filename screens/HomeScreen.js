@@ -1,11 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Button, StyleSheet, Text, View } from 'react-native';
-import TaskList from '../components/TaskList';
-import colors from '../theme/colors';
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Button, StyleSheet, Text, View } from "react-native";
+import TaskList from "../components/TaskList";
+import colors from "../theme/colors";
 
 export default function HomeScreen({ navigate }) {
-  const tasks = ['Buy groceries', 'Finish MAD homework', 'Go to the Gym', 'Study for everything'];
+  const tasks = [
+    "Buy groceries",
+    "Finish MAD homework",
+    "Go to the Gym",
+    "Study for everything",
+  ];
 
   return (
     <SafeAreaView style={styles.container}>
@@ -15,7 +20,11 @@ export default function HomeScreen({ navigate }) {
       <TaskList tasks={tasks} />
 
       <View style={styles.addBar}>
-        <Button title="Add to do item" onPress={() => {}} color={colors.buttonPrimary} />
+        <Button
+          title="Add to do item"
+          onPress={() => {}}
+          color={colors.buttonPrimary}
+        />
       </View>
 
       <StatusBar style="light" />
@@ -33,7 +42,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 34,
-    fontWeight: '800',
+    fontWeight: "800",
     color: colors.textPrimary,
     marginBottom: 20,
     letterSpacing: 0.4,
@@ -41,6 +50,6 @@ const styles = StyleSheet.create({
   addBar: {
     marginTop: 18,
     minHeight: 56,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
 });

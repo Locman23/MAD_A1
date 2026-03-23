@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native';
-import colors from '../theme/colors';
+import { StyleSheet, Text, View } from "react-native";
+import colors from "../theme/colors";
 
 export default function TaskBubble({ task }) {
   return (
@@ -20,6 +20,6 @@ const styles = StyleSheet.create({
   taskText: {
     fontSize: 18,
     color: colors.textSecondary,
-    fontWeight: '600',
+    fontWeight: "600",
   },
 });

@@ -1,6 +1,6 @@
-import { StyleSheet, View } from 'react-native';
-import TaskBubble from './TaskBubble';
-import colors from '../theme/colors';
+import { StyleSheet, View } from "react-native";
+import TaskBubble from "./TaskBubble";
+import colors from "../theme/colors";
 
 export default function TaskList({ tasks }) {
   return (
@@ -20,10 +20,10 @@ const styles = StyleSheet.create({
     paddingVertical: 18,
     paddingHorizontal: 16,
     shadowColor: colors.shadow,
-    shadowOpacity: 0.30,
+    shadowOpacity: 0.3,
     shadowRadius: 12,
     shadowOffset: { width: 0, height: 4 },
     elevation: 6,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
 });
