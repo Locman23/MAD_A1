@@ -1,18 +1,10 @@
-import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import AddTodoScreen from "./screens/AddTodoScreen";
 import HomeScreen from "./screens/HomeScreen";
 import colors from "./theme/colors";
 
 const Stack = createNativeStackNavigator();
-
-function AddTodoScreen() {
-  return (
-    <View style={styles.placeholderContainer}>
-      <Text style={styles.placeholderText}>Add New Todo Screen</Text>
-    </View>
-  );
-}
 
 export default function App() {
   return (
@@ -44,19 +36,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  placeholderContainer: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.background,
-    paddingHorizontal: 24,
-  },
-  placeholderText: {
-    color: colors.textPrimary,
-    fontSize: 24,
-    fontWeight: "700",
-    textAlign: "center",
-  },
-});
