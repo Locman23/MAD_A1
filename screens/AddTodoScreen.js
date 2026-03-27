@@ -1,15 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Ionicons } from "@expo/vector-icons";
 import {
   KeyboardAvoidingView,
   Platform,
-  Pressable,
   StyleSheet,
   Text,
   TextInput,
   View,
 } from "react-native";
+import IconActionButton from "../components/IconActionButton";
 import colors from "../theme/colors";
 
 export default function AddTodoScreen({ navigation }) {
@@ -27,6 +26,7 @@ export default function AddTodoScreen({ navigation }) {
             style={styles.input}
             placeholder="Enter task title"
             placeholderTextColor={colors.textSecondary}
+            returnKeyType="next"
           />
 
           <Text style={styles.label}>Description</Text>
@@ -36,22 +36,29 @@ export default function AddTodoScreen({ navigation }) {
             placeholderTextColor={colors.textSecondary}
             multiline
             textAlignVertical="top"
+            returnKeyType="done"
           />
         </View>
 
         <View style={styles.actionsRow}>
-          <Pressable
-            style={[styles.actionButton, styles.cancelButton]}
-            onPress={() => navigation.goBack()}
-          >
-            <Ionicons name="close-circle-outline" size={20} color={colors.textPrimary} />
-            <Text style={styles.actionText}>Cancel</Text>
-          </Pressable>
+          <View style={styles.actionItem}>
+            <IconActionButton
+              label="Cancel"
+              icon="close-circle-outline"
+              variant="secondary"
+              accessibilityLabel="Cancel and go back"
+              onPress={() => navigation.goBack()}
+            />
+          </View>
 
-          <Pressable style={[styles.actionButton, styles.saveButton]} onPress={() => {}}>
-            <Ionicons name="save-outline" size={20} color={colors.textPrimary} />
-            <Text style={styles.actionText}>Save</Text>
-          </Pressable>
+          <View style={styles.actionItem}>
+            <IconActionButton
+              label="Save"
+              icon="save-outline"
+              accessibilityLabel="Save todo"
+              onPress={() => {}}
+            />
+          </View>
         </View>
       </KeyboardAvoidingView>
 
@@ -83,7 +90,7 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     padding: 16,
     borderWidth: 1,
-    borderColor: "rgba(255, 255, 255, 0.08)",
+    borderColor: colors.borderSubtle,
   },
   label: {
     fontSize: 16,
@@ -95,7 +102,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.bubble,
     borderRadius: 12,
     borderWidth: 1,
-    borderColor: "rgba(255, 255, 255, 0.1)",
+    borderColor: colors.border,
     color: colors.textPrimary,
     fontSize: 16,
     paddingHorizontal: 14,
@@ -110,26 +117,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     gap: 12,
   },
-  actionButton: {
+  actionItem: {
     flex: 1,
-    minHeight: 54,
-    borderRadius: 16,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 8,
-  },
-  cancelButton: {
-    backgroundColor: colors.bubble,
-    borderWidth: 1,
-    borderColor: "rgba(255, 255, 255, 0.08)",
-  },
-  saveButton: {
-    backgroundColor: colors.buttonPrimary,
-  },
-  actionText: {
-    color: colors.textPrimary,
-    fontSize: 16,
-    fontWeight: "700",
   },
 });
