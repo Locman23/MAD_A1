@@ -13,7 +13,7 @@ import {
 import IconActionButton from "../components/IconActionButton";
 import colors from "../theme/colors";
 
-export default function AddTodoScreen({ navigation, route }) {
+export default function AddTodoScreen({ navigation, onSave }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const hasInput = title.length > 0 || description.length > 0;
@@ -27,12 +27,10 @@ export default function AddTodoScreen({ navigation, route }) {
       return;
     }
 
-    if (route?.params?.onSave) {
-      route.params.onSave({
-        title: trimmedTitle,
-        description: trimmedDescription,
-      });
-    }
+    onSave?.({
+      title: trimmedTitle,
+      description: trimmedDescription,
+    });
 
     Alert.alert("Success", "Todo Added Successfully.");
     setTitle("");
