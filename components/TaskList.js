@@ -1,13 +1,32 @@
-import { StyleSheet, View } from "react-native";
+import { useState } from "react";
+import { FlatList, StyleSheet, View } from "react-native";
 import TaskBubble from "./TaskBubble";
 import colors from "../theme/colors";
 
-export default function TaskList({ tasks }) {
+export default function TaskList({ todos }) {
+  const [expandedById, setExpandedById] = useState({});
+
+  const toggleTodo = (id) => {
+    setExpandedById((current) => ({
+      ...current,
+      [id]: !current[id],
+    }));
+  };
+
   return (
     <View style={styles.listCard}>
-      {tasks.map((task) => (
-        <TaskBubble key={task} task={task} />
-      ))}
+      <FlatList
+        data={todos}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <TaskBubble
+            todo={item}
+            expanded={Boolean(expandedById[item.id])}
+            onToggle={() => toggleTodo(item.id)}
+          />
+        )}
+        contentContainerStyle={styles.contentContainer}
+      />
     </View>
   );
 }
@@ -24,6 +43,8 @@ const styles = StyleSheet.create({
     shadowRadius: 12,
     shadowOffset: { width: 0, height: 4 },
     elevation: 6,
-    justifyContent: "center",
+  },
+  contentContainer: {
+    paddingVertical: 6,
   },
 });

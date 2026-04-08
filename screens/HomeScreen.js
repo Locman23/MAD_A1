@@ -6,17 +6,33 @@ import TaskList from "../components/TaskList";
 import colors from "../theme/colors";
 
 export default function HomeScreen({ navigation }) {
-  const tasks = [
-    "Buy groceries",
-    "Finish MAD homework",
-    "Go to the Gym",
-    "Study for everything",
+  const todos = [
+    {
+      id: "1",
+      title: "Buy groceries",
+      description: "Milk, eggs, bread, and fruit",
+    },
+    {
+      id: "2",
+      title: "Finish MAD homework",
+      description: "Complete all listed assignment requirements",
+    },
+    {
+      id: "3",
+      title: "Go to the Gym",
+      description: "45-minute workout session",
+    },
+    {
+      id: "4",
+      title: "Study for everything",
+      description: "Review lecture notes and practice questions",
+    },
   ];
 
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>My To-Do List</Text>
-      <TaskList tasks={tasks} />
+      <TaskList todos={todos} />
 
       <View style={styles.addBar}>
         <IconActionButton
