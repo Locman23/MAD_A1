@@ -2,9 +2,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useRef, useState } from "react";
-import AddTodoScreen from "./screens/AddTodoScreen";
-import HomeScreen from "./screens/HomeScreen";
-import colors from "./theme/colors";
+import AddTodoScreen from "./src/screens/AddTodoScreen";
+import HomeScreen from "./src/screens/HomeScreen";
+import colors from "./src/theme/colors";
 
 const Stack = createNativeStackNavigator();
 const TODOS_STORAGE_KEY = "todos_storage";
