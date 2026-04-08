@@ -3,7 +3,7 @@ import { FlatList, StyleSheet, View } from "react-native";
 import TaskBubble from "./TaskBubble";
 import colors from "../theme/colors";
 
-export default function TaskList({ todos }) {
+export default function TaskList({ todos, onFinishTodo, onDeleteTodo }) {
   const [expandedById, setExpandedById] = useState({});
 
   const toggleTodo = (id) => {
@@ -23,6 +23,8 @@ export default function TaskList({ todos }) {
             todo={item}
             expanded={Boolean(expandedById[item.id])}
             onToggle={() => toggleTodo(item.id)}
+            onFinish={() => onFinishTodo?.(item.id)}
+            onDelete={() => onDeleteTodo?.(item.id)}
           />
         )}
         contentContainerStyle={styles.contentContainer}

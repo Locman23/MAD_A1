@@ -2,11 +2,19 @@ import { Ionicons } from "@expo/vector-icons";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import colors from "../theme/colors";
 
-export default function TaskBubble({ todo, expanded, onToggle }) {
+export default function TaskBubble({
+  todo,
+  expanded,
+  onToggle,
+  onFinish,
+  onDelete,
+}) {
   return (
     <View style={styles.taskBubble}>
       <View style={styles.headerRow}>
-        <Text style={styles.taskText}>{todo.title}</Text>
+        <Text style={[styles.taskText, todo.finished && styles.finishedText]}>
+          {todo.title}
+        </Text>
 
         <Pressable
           onPress={onToggle}
@@ -27,8 +35,23 @@ export default function TaskBubble({ todo, expanded, onToggle }) {
           <Text style={styles.descriptionText}>{todo.description}</Text>
 
           <View style={styles.controlPanel}>
-            <Ionicons name="checkmark-circle" size={24} color="#4ade80" />
-            <Ionicons name="trash" size={22} color="#f87171" />
+            {!todo.finished ? (
+              <Pressable
+                onPress={onFinish}
+                accessibilityRole="button"
+                accessibilityLabel="Mark todo as finished"
+              >
+                <Ionicons name="checkmark-circle" size={24} color="#4ade80" />
+              </Pressable>
+            ) : null}
+
+            <Pressable
+              onPress={onDelete}
+              accessibilityRole="button"
+              accessibilityLabel="Delete todo"
+            >
+              <Ionicons name="trash" size={22} color="#f87171" />
+            </Pressable>
           </View>
         </View>
       ) : null}
@@ -55,6 +78,10 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     flex: 1,
     marginRight: 12,
+  },
+  finishedText: {
+    textDecorationLine: "line-through",
+    color: colors.textPrimary,
   },
   caretButton: {
     width: 28,

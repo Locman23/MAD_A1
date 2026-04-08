@@ -5,11 +5,15 @@ import IconActionButton from "../components/IconActionButton";
 import TaskList from "../components/TaskList";
 import colors from "../theme/colors";
 
-export default function HomeScreen({ navigation, todos }) {
+export default function HomeScreen({ navigation, todos, onFinishTodo, onDeleteTodo }) {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>My To-Do List</Text>
-      <TaskList todos={todos} />
+      <TaskList
+        todos={todos}
+        onFinishTodo={onFinishTodo}
+        onDeleteTodo={onDeleteTodo}
+      />
 
       <View style={styles.addBar}>
         <IconActionButton
