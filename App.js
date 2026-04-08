@@ -9,35 +9,8 @@ import colors from "./theme/colors";
 const Stack = createNativeStackNavigator();
 const TODOS_STORAGE_KEY = "todos_storage";
 
-const initialTodos = [
-  {
-    id: "1",
-    title: "Buy groceries",
-    description: "Milk, eggs, bread, and fruit",
-    finished: false,
-  },
-  {
-    id: "2",
-    title: "Finish MAD homework",
-    description: "Complete all listed assignment requirements",
-    finished: false,
-  },
-  {
-    id: "3",
-    title: "Go to the Gym",
-    description: "45-minute workout session",
-    finished: false,
-  },
-  {
-    id: "4",
-    title: "Study for everything",
-    description: "Review lecture notes and practice questions",
-    finished: false,
-  },
-];
-
 export default function App() {
-  const [todos, setTodos] = useState(initialTodos);
+  const [todos, setTodos] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isStorageAvailable, setIsStorageAvailable] = useState(true);
   const hasShownStorageWarning = useRef(false);
